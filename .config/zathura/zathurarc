@@ -1,0 +1,3 @@
+set recolor-lightcolor "#1d2021"
+set recolor-darkcolor "#ebdbb2"
+map b recolor
