@@ -14,13 +14,8 @@ install_packages() {
 	PACMAN_PACKAGE_LIST="package.list"
 
 	check_file $PACMAN_PACKAGE_LIST
-	check_file $PIP_PACKAGE_LIST
-
 	echo "Installing pacman packages"
 	pacman -S --needed <(pacman -Slq | sort) <(sort $PACMAN_PACKAGE_LIST)
-
-	echo "Installing pip packages"
-	pip install --user -I -r $PIP_PACKAGE_LIST
 }
 
 # Creates a symbolic link to a directory
