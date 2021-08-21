@@ -66,7 +66,7 @@ install_configs() {
 	for entry in ./.config/*
 	do
 		output=$CONFDIR/$(echo $entry | sed 's/.*\///g')
-		printf "%-20s %s\n" $entry $output
+		printf "%-20s -> %s\n" $entry $output
 		do_symlink $entry $output
 	done
 }
