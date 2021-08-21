@@ -1,3 +1,4 @@
 set recolor-lightcolor "#1d2021"
 set recolor-darkcolor "#ebdbb2"
+set font "JetBrains Mono Nerd Font"
 map b recolor

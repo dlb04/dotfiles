@@ -75,6 +75,11 @@ alias ls="ls --color=always"
 alias pacman="pacman --color=always"
 alias zshrc="nvim $ZDOTDIR/.zshrc"
 
+export PATH="$HOME/.local/bin":$PATH
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+
+pfetch
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 

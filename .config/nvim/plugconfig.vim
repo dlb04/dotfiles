@@ -4,7 +4,7 @@
 let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_contrast_dark='hard'
 
-colorscheme gruvbox-material
+colorscheme gruvbox
 
 " 
 " FZF 
@@ -39,3 +39,9 @@ let g:vista#renderer#icons = {
 \  }
 
 let g:vista_fzf_preview = ['right:50%']
+
+" Vimtex
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_compiler_latexmk = {
+  \ 'build_dir': 'build',
+\}

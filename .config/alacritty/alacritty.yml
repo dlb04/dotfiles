@@ -1,30 +1,30 @@
 colors:
   bright:
-    black: '#928374'
+    black: '#3c3836'
     blue: '#83a598'
     cyan: '#8ec07c'
     green: '#b8bb26'
-    magenta: '#b16286'
+    magenta: '#d3869b'
     red: '#fb4934'
     white: '#ebdbb2'
     yellow: '#fabd2f'
   normal:
-    black: '#282828'
-    blue: '#458588'
-    cyan: '#689d6a'
-    green: '#98971a'
+    black: '#1d2021'
+    blue: '#83a598'
+    cyan: '#8ec07c'
+    green: '#b8bb26'
     magenta: '#d3869b'
-    red: '#cc241d'
-    white: '#a89984'
-    yellow: '#d79921'
+    red: '#fb4934'
+    white: '#fbf1c7'
+    yellow: '#fabd2f'
   primary:
+    background: '#1d2021'
     foreground: '#ebdbb2'
-    hard contrast: background = '#1d2021'
 font:
   bold:
-    family: MesloLGS Nerd Font
+    family: JetBrains Mono ExtraBold Nerd Font
   italic:
-    family: MesloLGS Nerd Font
+    family: JetBrains Mono Medium Nerd Font
   normal:
-    family: MesloLGS Nerd Font
-  size: 8
+    family: JetBrains Mono Medium Nerd Font
+  size: 8.0

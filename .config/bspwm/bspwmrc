@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#==============================================================#
+#=====[ VARIABLES
+#==============================================================#
+_bc() {
+	bspc config "$@"
+}
+
+_br() {
+	bspc rule "$@"
+}
+
+#==============================================================#
+#=====[ LAUNCHERS
+#==============================================================#
+$HOME/.config/bspwm/autostart.sh
+
+#==============================================================#
+#=====[ CONFIGURATION
+#==============================================================#
+_bc window_gap 			  		10
+_bc top_padding 				26
+_bc top_monocle_padding 		0
+_bc border_width 				2
+_bc bottom_padding              0
+_bc left_padding                0
+_bc right_padding 				0
+_bc split_ratio                 0.50
+_bc single_monocle              false
+_bc click_to_focus              false
+_bc borderless_monocle          true
+_bc gapless_monocle             true
+_bc focus_by_distance           true
+_bc paddingless_monocle  	  	true
+_bc focus_follows_pointer       true
+_bc ignore_ewmh_focus 		  	true
+_bc history_aware_focus         true
+_bc remove_disabled_monitors    true
+_bc merge_overlapping_monitors  true
+_bc pointer_follows_monitor 	true
+_bc pointer_modifier mod1
+_bc pointer_action1 move
+_bc pointer_action2 resize_side
+_bc pointer_action3 resize_corner
+
+#==============================================================#
+#=====[ COLORS
+#==============================================================#
+_bc active_border_color "#2F3B48"
+_bc focused_border_color "#51AFEF"
+_bc normal_border_color "#2F3B48"
+_bc presel_feedback_color "#21242B"
+
+#==============================================================#
+#=====[ RULES
+#==============================================================#
+_br -a Alacritty -o desktop='^1' follow=on state='tiled'
+_br -a Code -o desktop='^2' follow=on state='tiled'
+_br -a firefox -o desktop='^3' follow=on state='tiled'
+_br -a Thunar -o desktop='^4' follow=on state='tiled'
+_br -a Zathura -o desktop='^5' follow=on state='tiled'
+_br -a vlc -o desktop='^6' follow=on state='tiled'

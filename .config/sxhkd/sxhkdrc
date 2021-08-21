@@ -1,0 +1,302 @@
+#!/bin/bash
+
+#==============================================================#
+#=====[ SUPER + ... KEYS
+#==============================================================#
+
+super + r
+	redshift -O 4300
+
+#-----[ CODE EDITOR
+super + c
+    code
+
+#-----[ BROWSER
+super + b
+    firefox
+
+#-----[ FLASHCARDS
+super + a
+    anki
+
+#-----[ NOTES
+super + n
+    notion-app-enhanced
+
+#-----[ PASSWORD MANGER
+super + p
+	keepassxc
+
+#-----[ PAVUCONTROL
+super + v
+    pavucontrol
+
+#-----[ SPOTIFY
+super + s
+    spotify
+
+#-----[ DOCUMENT VIEW
+super + z
+    zathura
+
+#-----[ TORRENT CLIENT
+super + q
+    qbittorrent
+
+#-----[ VIDEO PLAYER
+super + i
+    vlc
+
+#-----[ Discord Client
+super + u
+    discord
+
+#-----[ TERMINAL EMULATOR
+super + Return
+    alacritty
+
+#-----[ XKILL
+super + Escape
+    xkill
+
+#-----[ TOGGLE FULLSCREEN OF WINDOW
+super + f
+	bspc node --state \~fullscreen
+
+#-----[ TOGGLE PSEUDO TILING OF WINDOW
+super + o
+	bspc node --state \~pseudo_tiled
+
+super + l
+	bspc node --state \~floating
+
+#-----[ KILL APP
+super + w
+	bspc node -c
+
+#-----[ FOCUS SELECTED DESKTOP
+super + Tab
+	bspc desktop -f '^{1-9,10}'
+
+#-----[ INCREASE/DECREASE WINDOW GAP ON FOCUSED WINDOW
+super + bracket{left,right}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+
+#-----[ SET THE WINDOW STATE
+super + space
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#-----[ MOVE FOCUS TO ANOTHER MONITOR
+super + BackSpace
+		bspc monitor -f next
+
+#==============================================================#
+#=====[ SUPER + SHIFT KEYS
+#==============================================================#
+
+#-----[ FILE MANAGER
+super + shift + Return
+	thunar
+
+#-----[ RELOAD SXHKD
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+#-----[ RELOAD BSPWM
+super + shift + r
+	~/.config/bspwm/bspwmrc
+
+#-----[ KILL APP
+super + shift + x
+	bspc node -c
+
+#-----[ FOCUS/SWAP WINDOWS BY DIRECTION
+super + {_,shift + }{h,j,k,l}
+	bspc node --{focus,swap} {west,south,north,east}
+
+#-----[ FLIP LAYOUT VERTICALLY/HORIZONTALLY
+super + {_,shift + }a
+	bspc node @/ --flip {vertical,horizontal}
+
+#-----[ MOVE FOCUSED WINDOW TO OTHER MONITOR
+super + shift + Left
+	bspc node -m next --follow
+
+#-----[ MOVE FOCUSED WINDOW TO OTHER MONITOR
+super + shift + Right
+		bspc node -m next --follow
+
+#-----[ MOVE FOCUSED WINDOW TO OTHER MONITOR
+super + shift + Up
+	bspc node -m next --follow
+
+#-----[ MOVE FOCUSED WINDOW TO OTHER MONITOR
+super + shift + Down
+		bspc node -m next --follow
+
+#==============================================================#
+#=====[ SUPER + ALT KEYS
+#==============================================================#
+#-----[ KILL APP
+super + alt + k
+	~/.config/bspwm/scripts/keyboard.sh 
+
+#-----[ MOVE FLOATING WINDOWS
+super + alt + {_,shift + }{Left,Down,Up,Right}
+	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+
+#==============================================================#
+#=====[ SUPER + CONTROL KEYS
+#==============================================================#
+
+#-----[ CANCEL PRESELECTION
+super + ctrl + space
+	bspc node --presel-dir cancel
+
+#-----[ FOCUS/SWAP WINDOWS BY DIRECTION
+super + ctrl + {Left,Down,Up,Right}
+	bspc node --{focus} {west,south,north,east}
+
+#-----[ CONTRACT TILED SPACE
+super + ctrl + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+#-----[ FOCUS PARENT/BROTHER/FIRST/SECOND FOR PRESELECTION
+super + ctrl + {e,r,t,y}
+	bspc node --focus @{parent,brother,first,second}
+
+#-----[ PRESELECT THE SPLITTING AREA FOR NEXT WINDOW ON LEAF/PARENT
+super + ctrl + {u,i,o,p}
+	bspc node --presel-dir \~{west,south,north,east}
+
+#-----[ DEFINE SPLITTING RATIO FOR NEXT WINDOW ON LEAF/PARENT
+super + ctrl + {_,shift +}{1-9}
+	bspc node {_,@/} --presel-ratio 0.{1-9}
+
+#==============================================================#
+#-----[ ALT KEYS
+#==============================================================#
+
+#-----[ FOCUS SELECTED DESKTOP
+alt + Tab
+	bspc desktop -f '^{1-9,10}'
+
+#-----[ FOCUS SELECTED DESKTOP
+alt + shift + Tab
+	bspc desktop -f '^{1-9,10}'
+
+#-----[ ROTATE DESKTOP
+alt + space
+	bspc node @/ --rotate {90,-90}
+
+#==============================================================#
+#-----[ ALT + SHIFT KEYS
+#==============================================================#
+
+#-----[ EXPAND TILED SPACE
+alt + shift + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+#==============================================================#
+#-----[ CTRL + ALT KEYS
+#==============================================================#
+
+#-----[ FOCUS NEXT/PREVIOUS WINDOW
+ctrl + alt + Left
+	bspc node --focus west
+
+#-----[ FOCUS NEXT/PREVIOUS WINDOW
+ctrl + alt + Right
+	bspc node --focus east
+
+#-----[ FOCUS UP WINDOW
+ctrl +alt + Up
+	bspc node --focus north
+
+#-----[ FOCUS DOWN WINDOW
+ctrl + alt + Down
+	bspc node --focus south
+
+#==============================================================#
+#-----[ QWERTY ... KEYBOARD
+#==============================================================#
+
+#-----[ Focus selected desktop FOR QWERTY KEYBOARDS
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+#-----[ Move window to selected desktop FOR QWERTY KEYBOARDS
+super + shift + {1-9,0}
+    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+#-----[ FOCUSED DESKTOP WINDOW GAP
+super + button{4,5}
+  bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
+
+#==============================================================#
+#=====[ SCREENSHOTS
+#==============================================================#
+
+#-----[ PRTSCR
+Print
+    flameshot gui
+
+#==============================================================#
+#=====[ MULTMEDIA KEYS
+#==============================================================#
+
+#-----[ RAISES VOLUME
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#-----[ LOWERS VOLUME
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#-----[ MUTE
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#-----[ PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#-----[ NEXT
+XF86AudioNext
+    playerctl next
+
+#-----[ PREVIOUS
+XF86AudioPrev
+    playerctl previous
+
+#-----[ STOP
+XF86AudioStop
+    playerctl stop
+
+#-----[ BRIGHTNESS UP
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#-----[ BRIGHTNESS DOWN
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#==============================================================#
+#=====[ POLYBAR
+#==============================================================#
+
+#==============================================================#
+#=====[ ROFI LAUNCHER
+#==============================================================#
+
+#-----[ APP LAUNCHER
+super + d
+	rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 15 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Papirus" -font "JetBrainsMono Bold Nerd Font 10"
+
+#-----[ APP LAUNCHER SHOW WINDOW
+super + ctrl + d
+	rofi -modi drun -show window -line-padding 4 \
+                -columns 2 -padding 15 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Papirus" -font "JetBrainsMono Bold Nerd Font 10"

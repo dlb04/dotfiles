@@ -10,16 +10,6 @@ fonts:
     Iosevka: Iosevka NF
     Hack: Hack NF
     SpaceMono: SpaceMono NF
-    MesloLGS:
-      normal: MesloLGS Nerd Font
-      bold: MesloLGS NF
-      italic: MesloLGS NF
-
-    Inconsolata:
-      normal: Inconsolata Regular Nerd Font
-      bold: Inconsolata Bold Nerd Font
-      italic: Inconsolata Regular Nerd Font
-
     JetBrains:
         normal: JetBrains Mono Medium Nerd Font
         italic: JetBrains Mono Medium Nerd Font

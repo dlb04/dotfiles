@@ -10,6 +10,7 @@ Plug 'ap/vim-css-color'
 Plug 'liuchengxu/vista.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'ryanoasis/vim-devicons'
+Plug 'lervag/vimtex'
 
 Plug 'chriskempson/base16-vim'
 Plug 'franbach/miramare'
